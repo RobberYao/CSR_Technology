@@ -1,4 +1,4 @@
-package com.CSR.technology.Controller;
+package com.CSR.technology.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
