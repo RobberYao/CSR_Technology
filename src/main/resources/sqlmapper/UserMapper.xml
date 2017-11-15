@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.CSR.technology.mapper.UserMapper">
+
+	<!--在resultMap节点中： id表示哪个字段代表这主键， result节点定义了普通的映射关系： property表示JavaBean中的属性名称， 
+		column表示数据库中的字段名称， javaType代表JavaBean中该属性的类型， jdbcType则表示数据库中该字段的类型. -->
+
 	<resultMap id="ResultMap" type="com.CSR.technology.entity.User">
+		<id column="id" property="id" jdbcType="INTEGER" javaType="Integer" />
+		<result column="name" property="name" jdbcType="VARCHAR"
+			javaType="String" />
+		<result column="age" property="age" jdbcType="INTEGER"
+			javaType="Integer" />
+	</resultMap>
+
+
+	<sql id="Base_Column_List">name, age</sql>
+
+	<select id="selectUserByName" parameterType="java.lang.String"
+		resultMap="ResultMap">
+		select id, <include refid="Base_Column_List" />
+		from USER where Name = #{name,jdbcType=VARCHAR}
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </mapper>
