@@ -14,8 +14,6 @@ public class TestController {
 	@Autowired
 	private StringRedisTemplate stringRedisTemplate;
 
-	@Autowired
-	public UserService userService;
 
 	@RequestMapping("/hello")
 	public String index() {
@@ -23,9 +21,6 @@ public class TestController {
 		return stringRedisTemplate.opsForValue().get("aaa");
 	}
 
-	@RequestMapping("/name")
-	public User getUserByName(String name) {
-		return userService.getUserByName(name);
-	}
+
 
 }

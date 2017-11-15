@@ -7,7 +7,7 @@ import com.CSR.technology.entity.User;
 import com.CSR.technology.mapper.UserMapper;
 
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserMapper userMapper;

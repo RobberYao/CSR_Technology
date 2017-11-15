@@ -7,6 +7,6 @@ import com.CSR.technology.entity.User;
 @Repository
 public interface UserMapper {
 
-	public User selectUserByName(String name);
+	User selectUserByName(String name);
 
 }
